@@ -1,10 +1,7 @@
 import UIKit
 
 // квадратное уравнение
-func exc1() {
-    let a: Double = 1
-    let b: Double = 2
-    let c: Double = 1
+func exc1(a: Double, b: Double, c: Double) {
     let d: Double = b * b - 4 * a * c
     if d > 0 {
         let sqrtD = sqrt(d)
@@ -21,9 +18,7 @@ func exc1() {
 }
 
 // треугольник
-func exc2() {
-    let a: UInt = 1
-    let b: UInt = 2
+func exc2(a: UInt, b: UInt) {
     let c = sqrt(pow(Double(a), 2) + pow(Double(b), 2))
     print("Гипотенуза равна " + String(c))
     print("Площадь равна " + String(a * b / 2))
@@ -31,9 +26,7 @@ func exc2() {
 }
 
 // про вклады
-func exc3() {
-    let sum: Double = 5000
-    let percent: Double = 10.5
+func exc3(sum: Double, percent: Double) {
     var out: Double = sum
     for _ in 1...5 {
         out += out * percent / 100
@@ -41,6 +34,6 @@ func exc3() {
     print("Сумма вклада на пятый год составит " + String(format: "%.2f", out))
 }
 
-exc1()
-exc2()
-exc3()
+exc1(a: 1, b: 2, c: 1)
+exc2(a: 1, b: 2)
+exc3(sum: 5000, percent: 10.5)
