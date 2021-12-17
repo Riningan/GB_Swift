@@ -60,6 +60,7 @@ struct Car {
                 let newBackVolume = usedBackVolume + volume
                 if (newBackVolume > maxBackVolume) {
                     print("Нельзя добавить столько груза")
+                    usedBackVolume = min(newBackVolume, maxBackVolume)
                 } else {
                     usedBackVolume = newBackVolume
                 }
@@ -78,3 +79,9 @@ audi.apply(CarAction.OPEN_WINDOW)
 audi.apply(CarAction.PUT_TO_BACK(volume: 10))
 audi.apply(CarAction.PUT_TO_BACK(volume: 20))
 audi.apply(CarAction.START_ENGINE)
+audi.apply(CarAction.STOP_ENGINE)
+audi.apply(CarAction.GET_FROM_BACK(volume: 10))
+audi.apply(CarAction.GET_FROM_BACK(volume: 5))
+
+print(audi)
+print(bmw)
